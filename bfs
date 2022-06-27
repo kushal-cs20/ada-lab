@@ -36,3 +36,5 @@ if(visited[i])
 printf("%d\t",i);
 getch();
 }
+
+
