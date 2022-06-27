@@ -6,10 +6,10 @@ int bin(int arr[], int l, int r, int x)
     for(int p = 0;p<10000000;p++);
 if (r >= l)
 {
-		int mid = l + (r - l)/2;
-		if (arr[mid] == x) return mid;
-		if (arr[mid] > x) return bin(arr, l, mid-1, x);
-		return bin(arr, mid+1, r, x);
+int mid = l + (r - l)/2;
+if (arr[mid] == x) return mid;
+if (arr[mid] > x) return bin(arr, l, mid-1, x);
+return bin(arr, mid+1, r, x);
 }
 return -1;
 }
