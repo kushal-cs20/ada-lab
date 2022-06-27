@@ -33,3 +33,5 @@ printf("%d", a[i]);
    printf("Time is %fs",difftime(end,start));
 return 0;
 }
+
+
