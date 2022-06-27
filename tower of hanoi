@@ -1,24 +1,22 @@
-#include<iostream>
-using namespace std;
-
-void hanoi(int disk,char source,char dest,char aux)
+#include<stdio.h>
+void tower(int n,char sour,char temp,char dest)
 {
-    if(disk==1)
+    if(n==1)
     {
-        cout<<"                         Move Disk  "<<disk<<"  From  "<<source<<"  to  "<<dest<<endl<<endl;
-        return;
-    }
-        hanoi(disk-1,source,aux,dest);
-        cout<<"                         Move Disk  "<<disk<<"  From  "<<source<<"  to  "<<dest<<endl<<endl;
-        hanoi(disk-1,aux,dest,source);
-}
+        printf("Move disc 1 from %c to %c\n",sour,dest);
 
+    }
+    else{
+        tower(n-1,sour,dest,temp);
+        printf("Move %d disc from %c to %c\n",n,sour,dest);
+        tower(n-1,temp,sour,dest);
+        }
+}
 int main()
 {
-    int disk;
-    cout<<"                         Enter number of disks : ";
-    cin>>disk;
-    cout<<endl;
-    hanoi(disk,'A','B','C');
+    int n;
+    printf("enter the number of disc\n");
+    scanf("%d",&n);
+    tower(n,'S','T','D');
     return 0;
 }
